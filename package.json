@@ -1,0 +1,12 @@
+{
+  "name"          : "json-serialize",
+  "description"   : "JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON",
+  "homepage"      : "https://github.com/kmalakoff/json-serialize",
+  "keywords"      : ["util", "functional", "server", "client", "browser", "json"],
+  "author"        : "Kevin Malakoff <xmann.intl@gmail.com>",
+  "contributors"  : [],
+  "dependencies"  : [],
+  "repository"    : {"type": "git", "url": "git://github.com/kmalakoff/json-serialize.git"},
+  "main"          : "json-serialize.js",
+  "version"       : "1.0.0"
+}
