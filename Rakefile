@@ -20,14 +20,14 @@ end
 
 desc "Use the Closure Compiler to compress JSON-Serialize.js"
 task :build do
-  minimize_with_header('json-serialize.js', 'json-serialize-min.js')
+  minimize_with_header('json-serialize.js', 'json-serialize.min.js')
 end
 
 desc "check, build and generate documentation"
 task :package do
   begin
     system "jsl -nofilelisting -nologo -conf docs/jsl.conf -process json-serialize.js"
-    minimize_with_header('json-serialize.js', 'json-serialize-min.js')
+    minimize_with_header('json-serialize.js', 'json-serialize.min.js')
     check 'docco', 'docco', 'https://github.com/jashkenas/docco'
     sh "docco json-serialize.js"
   end
