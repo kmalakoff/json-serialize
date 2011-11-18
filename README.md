@@ -2,12 +2,15 @@
 JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON.
 ````
 
-Uses the following configurable conventions:
+You can get the library here:
 
-1. type in the json with search for a constructor with a fromJSON method to serialize the json into an instance.
-2. uses toJSON and fromJSON function for serializing and deserializing instances
+* Development version: https://github.com/kmalakoff/json-serialize/raw/master/json-serialize.js
+* Production version: https://github.com/kmalakoff/json-serialize/raw/master/json-serialize.min.js
 
-Also, JSON-Serialize natively supports nested Date serialization so this "just works":
+Examples
+--------
+
+1) JSON-Serialize natively supports nested Date serialization so this "just works":
 
 ```javascript
 var embedded_date_objects = [
@@ -24,9 +27,61 @@ equal(_.isEqual(embedded_date_objects, deserialized_embedded_date_objects), true
 
 Pretty cool, eh?
 
-### Examples:
+2) Creating custom serialization for one of your classes.
 
-```javascript
-var plain_old_json = JSON.serialize(some_instance), some_instance_copy = JSON.deserialize(plain_old_json);
-var namespaced_instance = JSON.deserialize({_type: ‘SomeNamepace.SomeClass’, prop1: 1, prop2: 2});
+```coffeescript
+class SomeClass
+  constructor: (int_value, string_value, date_value) ->
+    this.int_value = int_value;
+    this.string_value = string_value;
+    this.date_value = date_value;
+
+  toJSON: ->
+    return {
+      _type:'SomeClass',
+      int_value:this.int_value,
+      string_value:this.string_value,
+      date_value:JSON.serialize(this.date_value)
+    }
+
+  @fromJSON: (json) ->    # note: this is a class method
+    if (json._type!='SomeClass') return null;
+    return new SomeClass(json.int_value, json.string_value, JSON.deserialize(json.date_value));
+```
+
+Now you can automatically serialize and deserialize it:
+
+```coffeescript
+instance = new SomeClass(1, 'two', new Date());
+json = JSON.serialize(instance)   # this calls the toJSON function on the instance
+
+instance2 = JSON.deserialize(json)   # this calls the fromJSON function on the class (you need to make sure the constructor can be found)
+```
+
+# Conventions
+
+Uses the following configurable conventions:
+
+1. use a '_type" field in the json that you serialize
+2. for serializing, implement a toJSON function as an **instance** method.
+3. for deserializing, implement a fromJSON deserialization factory function as an **class** method. This doesn't need to be a class function but can be any function as long as it can be found (see JSON.deserialize.NAMESPACE_ROOTS).
+
+# Options
+
+* JSON.deserialize.TYPE_FIELD
+
+You can globally choose the type field used when deserializing an instance from JSON.
+
+For example, if you use couchdb, you could use a 'type' field convention:
+
+```coffeescript
+JSON.deserialize.TYPE_FIELD = 'type'
+```
+
+* JSON.deserialize.NAMESPACE_ROOTS
+
+If you don't want to pollute the global namespace with your deserialization factory functions, you can put them in any sort of nested namespaces. Just register your namespace roots like:
+
+```coffeescript
+JSON.deserialize.NAMESPACE_ROOTS.push(window.my_classes)
 ```

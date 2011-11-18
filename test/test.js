@@ -157,7 +157,7 @@ $(document).ready(function() {
 
     // get rid of the constructor from global namespace and put in local 'Constructors' namespace
     // (like if you were using CommonJS and don't want to pollute global namespace)
-    root.Constructors || (root.Constructors = {}); JSON.deserialize.CONSTRUCTOR_ROOTS.unshift(root.Constructors);
+    root.Constructors || (root.Constructors = {}); JSON.deserialize.NAMESPACE_ROOTS.unshift(root.Constructors);
     root.Constructors.couch_class = CouchClass;
     delete root['couch_class'];
 
@@ -166,6 +166,6 @@ $(document).ready(function() {
 
     // cleanup
     JSON.deserialize.TYPE_FIELD = previous_json_field;
-    JSON.deserialize.CONSTRUCTOR_ROOTS.shift();
+    JSON.deserialize.NAMESPACE_ROOTS.shift();
   });
 });

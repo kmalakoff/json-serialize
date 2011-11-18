@@ -1,4 +1,4 @@
-// JSON-Serialize.js 1.0.0
+// JSON-Serialize.js 1.1.0
 // (c) 2011 Kevin Malakoff.
 // JSON-Serialize is freely distributable under the MIT license.
 // https://github.com/kmalakoff/json-serialize
@@ -7,7 +7,7 @@
 (function() {
 
 this.JSON || (this.JSON = {}); // hopefully JSON is defined!
-JSON.SERIALIZE_VERSION = '1.0.0';
+JSON.SERIALIZE_VERSION = '1.1.0';
 
 ////////////////HELPERS - BEGIN//////////////////
 var isEmpty = function(obj) {
@@ -75,7 +75,7 @@ JSON.serialize = function(obj, options) {
 //* `skip_dates` - skip the automatic Date conversion check from ISO8601 string format. Useful if you want to keep your dates in string format.
 // <br/>**Global settings:**<br/>
 //* `JSON.deserialize.TYPE_FIELD` - the field key in the serialized JSON that is used for constructor lookup.<br/>
-//* `JSON.deserialize.CONSTRUCTOR_ROOTS` - the array of roots that are used to find the constructor. Useful for reducing global namespace pollution<br/>
+//* `JSON.deserialize.NAMESPACE_ROOTS` - the array of roots that are used to find the constructor. Useful for reducing global namespace pollution<br/>
 JSON.deserialize = function(json, options) {
   var json_type = typeof(json);
 
@@ -118,8 +118,8 @@ JSON.deserialize = function(json, options) {
     var root, constructor_or_root, instance;
 
     // Try searching in the available namespaces
-    for (var j=0, k=JSON.deserialize.CONSTRUCTOR_ROOTS.length; j<k;j++) {
-      root = JSON.deserialize.CONSTRUCTOR_ROOTS[j];
+    for (var j=0, k=JSON.deserialize.NAMESPACE_ROOTS.length; j<k;j++) {
+      root = JSON.deserialize.NAMESPACE_ROOTS[j];
       constructor_or_root = keyPath(root, type);
       if (!constructor_or_root) continue;
 
@@ -138,5 +138,5 @@ JSON.deserialize = function(json, options) {
 };
 
 JSON.deserialize.TYPE_FIELD = '_type';
-JSON.deserialize.CONSTRUCTOR_ROOTS = [this];
+JSON.deserialize.NAMESPACE_ROOTS = [this];
 })();
