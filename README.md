@@ -85,3 +85,29 @@ If you don't want to pollute the global namespace with your deserialization fact
 ```coffeescript
 JSON.deserialize.NAMESPACE_ROOTS.push(window.my_classes)
 ```
+
+# Release Notes
+
+###1.1.1
+
+- changed namespace from JSON to JSONS
+
+- moved TYPE_FIELD and NAMESPACE_ROOTS from JSON.deserialize to JSONS namespace
+
+- converted back to CoffeeScript
+
+- build using easy-bake
+
+- added packaging test
+
+Building, Running and Testing the library
+-----------------------
+
+###Installing:
+
+1. install node.js: http://nodejs.org
+2. install node packages: 'npm install'
+
+###Commands:
+
+Look at: https://github.com/kmalakoff/easy-bake

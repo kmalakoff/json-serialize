@@ -1,12 +1,26 @@
 {
+  "author"        : "Kevin Malakoff <https://github.com/kmalakoff>",
   "name"          : "json-serialize",
   "description"   : "JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON",
-  "homepage"      : "https://github.com/kmalakoff/json-serialize",
-  "keywords"      : ["util", "functional", "server", "client", "browser", "json"],
-  "author"        : "Kevin Malakoff <xmann.intl@gmail.com>",
-  "contributors"  : [],
-  "dependencies"  : [],
-  "repository"    : {"type": "git", "url": "git://github.com/kmalakoff/json-serialize.git"},
+  "keywords"      : ["json-serialize", "json-serializejs", "json", "util", "server", "client"],
+
+  "url"           : "http://kmalakoff.github.com/json-serialize/",
+  "homepage"      : "http://kmalakoff.github.com/json-serialize/",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kmalakoff/json-serialize.git"
+  },
+
+  "scripts": {
+    "test": "node_modules/.bin/cake -c -b test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffee-script": "latest",
+    "easy-bake": "0.1.2"
+  },
+
   "main"          : "json-serialize.js",
-  "version"       : "1.1.0"
+  "version"       : "1.1.1"
 }
