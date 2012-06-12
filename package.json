@@ -16,6 +16,9 @@
     "postinstall": "cake postinstall",
     "test": "cake -c -b test"
   },
+  "optionalDependencies": {
+    "browserify": "latest"
+  },
 
   "main"          : "json-serialize.js",
   "version"       : "1.1.1"

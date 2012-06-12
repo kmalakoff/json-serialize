@@ -11,7 +11,7 @@
 (function() {
   var JSONS, isArray, isEmpty, keyPath, root, stringHasISO8601DateSignature;
 
-  root = this;
+  root = typeof window === 'undefined' ? global : window;
 
   JSONS = this.JSONS = typeof exports !== 'undefined' ? exports : {};
 
@@ -92,7 +92,7 @@
   };
 
   JSONS.deserialize = function(json, options) {
-    var constructor_or_root, date, instance, json_as_JSON, json_type, key, result, type, value, _i, _j, _len, _len1, _ref;
+    var constructor_or_root, date, instance, json_as_JSON, json_type, key, namespace_root, result, type, value, _i, _j, _len, _len1, _ref;
     json_type = typeof json;
     if (json_type === "string") {
       if (json.length && (json[0] === "{") || (json[0] === "[")) {
@@ -134,8 +134,8 @@
       type = json[JSONS.TYPE_FIELD];
       _ref = JSONS.NAMESPACE_ROOTS;
       for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
-        root = _ref[_j];
-        constructor_or_root = keyPath(root, type);
+        namespace_root = _ref[_j];
+        constructor_or_root = keyPath(namespace_root, type);
         if (!constructor_or_root) {
           continue;
         }

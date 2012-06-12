@@ -9,11 +9,14 @@ tests:
   directories:
     - test/core
     - test/packaging
-  options:
+  modes:
+    build:
+      bundles:
+        test/packaging/build/bundle.js:
+          json-serialize: json-serialize.js
+      no_files_ok: ['test/core', 'test/packaging']
     test:
       command: phantomjs
       runner: phantomjs-qunit-runner.js
       files:
         - '**/*.html'
-    build:
-      no_files_ok: ['test/core', 'test/packaging']

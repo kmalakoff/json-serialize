@@ -4,7 +4,7 @@
   JSON-Serialize is freely distributable under the MIT license.
   https:#github.com/kmalakoff/json-serialize
 ###
-root = @
+root = if typeof(window) == 'undefined' then global else window
 
 # export or create JSONS namespace
 JSONS = @JSONS = if (typeof(exports) != 'undefined') then exports else {}
@@ -107,8 +107,8 @@ JSONS.deserialize = (json, options) ->
     type = json[JSONS.TYPE_FIELD]
 
     # Try searching in the available namespaces
-    for root in JSONS.NAMESPACE_ROOTS
-      constructor_or_root = keyPath(root, type)
+    for namespace_root in JSONS.NAMESPACE_ROOTS
+      constructor_or_root = keyPath(namespace_root, type)
       continue  unless constructor_or_root
 
       # class/root parse function
