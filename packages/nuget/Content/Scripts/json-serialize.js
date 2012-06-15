@@ -11,7 +11,7 @@
 (function() {
   var JSONS, isArray, isEmpty, keyPath, root, stringHasISO8601DateSignature;
 
-  root = typeof window === 'undefined' ? global : window;
+  root = this;
 
   JSONS = this.JSONS = typeof exports !== 'undefined' ? exports : {};
 

@@ -4,7 +4,7 @@
   JSON-Serialize is freely distributable under the MIT license.
   https:#github.com/kmalakoff/json-serialize
 ###
-root = if typeof(window) == 'undefined' then global else window
+root = @
 
 # export or create JSONS namespace
 JSONS = @JSONS = if (typeof(exports) != 'undefined') then exports else {}
