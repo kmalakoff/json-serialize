@@ -5,9 +5,6 @@ You can get the library here:
 * [Development version][1]
 * [Production version][2]
 
-[1]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.js
-[2]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.min.js
-
 Examples
 --------
 
@@ -112,3 +109,6 @@ Building, Running and Testing the library
 ###Commands:
 
 Look at: https://github.com/kmalakoff/easy-bake
+
+[1]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.js
+[2]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.min.js
