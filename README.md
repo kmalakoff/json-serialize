@@ -1,11 +1,12 @@
-````
 JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON.
-````
 
 You can get the library here:
 
-* Development version: https://github.com/kmalakoff/json-serialize/raw/master/json-serialize.js
-* Production version: https://github.com/kmalakoff/json-serialize/raw/master/json-serialize.min.js
+* [Development version][1]
+* [Production version][2]
+
+[1]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.js
+[2]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.min.js
 
 Examples
 --------
