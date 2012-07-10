@@ -1,7 +1,7 @@
 {
   "author"        : {"name": "Kevin Malakoff", "url": "https://github.com/kmalakoff"},
   "name"          : "json-serialize",
-  "description"   : "JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON",
+  "description"   : "JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON.",
   "keywords"      : ["json-serialize", "json-serializejs", "json", "util", "server", "client"],
 
   "url"           : "http://kmalakoff.github.com/json-serialize/",

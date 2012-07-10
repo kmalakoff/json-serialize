@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>1.1.1</version>
+    <authors>Kevin Malakoff</authors>
+    <owners />
+    <licenseUrl>https://github.com/kmalakoff/json-serialize/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://kmalakoff.github.com/json-serialize/</projectUrl>
+    <dependencies>
+    </dependencies>
+    <id>json-serialize</id>
+    <title>json-serialize</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON.</description>
+    <summary>JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON.</summary>
+    <copyright>Copyright (c) 2011-2012 Kevin Malakoff</copyright>
+    <tags>json-serialize json-serializejs json util server client</tags>
+  </metadata>
+  <files>
+    <file src="content/Scripts/json-serialize.js" target="content/Scripts/json-serialize.js" />
+    <file src="content/Scripts/json-serialize.min.js" target="content/Scripts/json-serialize.min.js" />
+  </files>
+</package>
