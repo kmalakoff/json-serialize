@@ -12,7 +12,6 @@ module.exports =
       ]
 
   tests:
-    output: 'build'
     _build:
       commands: [
         'mbundle test/packaging/bundle-config.coffee'
