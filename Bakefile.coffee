@@ -7,6 +7,7 @@ module.exports =
       commands: [
         'cp json-serialize.js packages/npm/json-serialize.js'
         'cp json-serialize.min.js packages/npm/json-serialize.min.js'
+        'cp README.md packages/npm/README.md'
         'cp json-serialize.js packages/nuget/Content/Scripts/json-serialize.js'
         'cp json-serialize.min.js packages/nuget/Content/Scripts/json-serialize.min.js'
       ]
