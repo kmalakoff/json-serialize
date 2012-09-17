@@ -86,7 +86,7 @@ JSON.deserialize.NAMESPACE_ROOTS.push(window.my_classes)
 
 # Release Notes
 
-###1.1.1
+###1.1.2
 
 - changed namespace from JSON to JSONS
 
@@ -110,5 +110,5 @@ Building, Running and Testing the library
 
 Look at: https://github.com/kmalakoff/easy-bake
 
-[1]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.js
-[2]: https://raw.github.com/kmalakoff/json-serialize/1.1.1/json-serialize.min.js
+[1]: https://raw.github.com/kmalakoff/json-serialize/1.1.2/json-serialize.js
+[2]: https://raw.github.com/kmalakoff/json-serialize/1.1.2/json-serialize.min.js

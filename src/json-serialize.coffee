@@ -1,14 +1,13 @@
 ###
-  JSON-Serialize.js 1.1.1
-  (c) 2011, 2012 Kevin Malakoff.
-  JSON-Serialize is freely distributable under the MIT license.
-  https:#github.com/kmalakoff/json-serialize
+  JSON-Serialize.js 1.1.2
+  (c) 2011, 2012 Kevin Malakoff - http://kmalakoff.github.com/json-serialize/
+  License: MIT (http://www.opensource.org/licenses/mit-license.php)
 ###
 root = @
 
 # export or create JSONS namespace
 JSONS = @JSONS = if (typeof(exports) != 'undefined') then exports else {}
-JSONS.VERSION = "1.1.1"
+JSONS.VERSION = "1.1.2"
 
 JSONS.TYPE_FIELD = "_type"
 JSONS.NAMESPACE_ROOTS = [root]
@@ -116,7 +115,7 @@ JSONS.deserialize = (json, options) ->
         return constructor_or_root.fromJSON(json)
 
       # instance parse function (Backbone.Model and Backbone.Collection style)
-      else if constructor_or_root:: and constructor_or_root::parse
+      else if constructor_or_root.prototype and constructor_or_root.prototype.parse
         instance = new constructor_or_root()
         return instance.set(instance.parse(json)) if instance.set
         return instance.parse(json)

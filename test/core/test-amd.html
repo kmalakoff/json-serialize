@@ -1,19 +1,26 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>JSON-Serialize.js Test Suite - Packaging</title>
+  <title>JSON-Serialize.js Test Suite (AMD)</title>
   <link rel="stylesheet" href="../vendor/qunit/qunit.css" type="text/css" media="screen" />
   <script type="text/javascript" src="../vendor/qunit/jquery.js"></script>
   <script type="text/javascript" src="../vendor/qunit/qunit.js"></script>
   <script type="text/javascript" src="../vendor/qunit/jslitmus.js"></script>
 
-  <script type="text/javascript" src="build/bundle.js"></script>
+  <script src="../vendor/require.js"></script>
+  <script type="text/javascript">
+    require.config({
+      paths: {
+        'json-serialize': "../../json-serialize"
+      }
+    });
+  </script>
 
-  <script type="text/javascript" src="../core/build/test.js"></script>
+  <script type="text/javascript" src="build/test-amd.js"></script>
 </head>
 <body>
   <div>
-    <h1 id="qunit-header">JSON-Serialize.js Test Suite - Packaging</h1>
+    <h1 id="qunit-header">JSON-Serialize.js Test Suite (AMD)</h1>
     <h2 id="qunit-banner"></h2>
     <h2 id="qunit-userAgent"></h2>
     <ol id="qunit-tests"></ol>
