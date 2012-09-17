@@ -28,7 +28,7 @@ class CouchClass
     return null if (json.type!='couch_class')
     return new CouchClass(json.key, json.value)
 
-$(document).ready(->
+$(->
   module("JSON-Serialize")
 
   # import JSON-Serialize

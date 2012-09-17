@@ -1,9 +1,17 @@
 JSON-Serialize.js provides conventions and helpers to manage serialization and deserialization of instances to/from JSON.
 
-You can get the library here:
+#Download Latest (1.1.2):
 
-* [Development version][1]
-* [Production version][2]
+Please see the [release notes](https://github.com/kmalakoff/json-serialize/blob/master/RELEASE_NOTES.md) for upgrade pointers.
+
+* [Development version](https://raw.github.com/kmalakoff/json-serialize/1.1.2/json-serialize.js)
+* [Production version](https://raw.github.com/kmalakoff/json-serialize/1.1.2/json-serialize.min.js)
+
+###Module Loading
+
+JSON-Serialize.js is compatible with RequireJS, CommonJS, Brunch and AMD module loading. Module names:
+
+* 'json-serialize' - json-serialize.js.
 
 Examples
 --------
@@ -84,20 +92,6 @@ If you don't want to pollute the global namespace with your deserialization fact
 JSON.deserialize.NAMESPACE_ROOTS.push(window.my_classes)
 ```
 
-# Release Notes
-
-###1.1.2
-
-- changed namespace from JSON to JSONS
-
-- moved TYPE_FIELD and NAMESPACE_ROOTS from JSON.deserialize to JSONS namespace
-
-- converted back to CoffeeScript
-
-- build using easy-bake
-
-- added packaging test
-
 Building, Running and Testing the library
 -----------------------
 
@@ -109,6 +103,3 @@ Building, Running and Testing the library
 ###Commands:
 
 Look at: https://github.com/kmalakoff/easy-bake
-
-[1]: https://raw.github.com/kmalakoff/json-serialize/1.1.2/json-serialize.js
-[2]: https://raw.github.com/kmalakoff/json-serialize/1.1.2/json-serialize.min.js
