@@ -1,0 +1,13 @@
+{
+  "name": "json-serialize",
+  "version": "1.1.2",
+  "main": "json-serialize.js",
+  "ignore": [
+    "**/.*",
+    "components",
+    "node_modules",
+    "packages",
+    "test",
+    "vendor"
+  ]
+}
