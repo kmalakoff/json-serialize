@@ -1,5 +1,5 @@
 ###
-  JSON-Serialize.js 1.1.2
+  JSON-Serialize.js 1.1.3
   (c) 2011, 2012 Kevin Malakoff - http://kmalakoff.github.com/json-serialize/
   License: MIT (http://www.opensource.org/licenses/mit-license.php)
 ###
@@ -7,7 +7,7 @@ root = @
 
 # export or create JSONS namespace
 JSONS = @JSONS = if (typeof(exports) != 'undefined') then exports else {}
-JSONS.VERSION = "1.1.2"
+JSONS.VERSION = "1.1.3"
 
 JSONS.TYPE_FIELD = "_type"
 JSONS.NAMESPACE_ROOTS = [root]
@@ -46,12 +46,15 @@ JSONS.serialize = (obj, options) ->
 
   # use toJSON function - Note: Dates have a built in toJSON that converts them to ISO8601 UTC ("Z") strings
   return obj.toJSON() if obj.toJSON
-  return null if isEmpty(obj)
 
   # serialize an array
   if isArray(obj)
     result = []
     result.push(JSONS.serialize(value)) for value in obj
+
+  # empty
+  else if isEmpty(obj)
+    return null
 
   # serialize the properties
   else

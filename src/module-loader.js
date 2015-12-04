@@ -1,5 +1,5 @@
 /*
-  JSON-Serialize.js 1.1.2
+  JSON-Serialize.js 1.1.3
   (c) 2011, 2012 Kevin Malakoff - http://kmalakoff.github.com/json-serialize/
   License: MIT (http://www.opensource.org/licenses/mit-license.php)
 */

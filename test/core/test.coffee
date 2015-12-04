@@ -1,5 +1,8 @@
 root = this
 
+stringHasISO8601DateSignature = (string) ->
+  (string.length >= 19) and (string[4] is "-") and (string[7] is "-") and (string[10] is "T") and (string[string.length - 1] is "Z")
+
 root.SomeNamespace or= {}
 class SomeNamespace.SomeClass
   constructor: (int_value, string_value, date_value) ->
@@ -168,4 +171,20 @@ test("JSONS.deserialize", ->
   # cleanup
   JSONS.TYPE_FIELD = previous_json_field
   JSONS.NAMESPACE_ROOTS.shift()
+)
+
+test("issue 1", ->
+  object = {
+    empty_arr: [],
+    null_arr: null,
+    arr: [new Date()]
+  }
+
+  result = JSONS.serialize(object)
+  ok(result.empty_arr instanceof Array)
+  equal(result.empty_arr.length, 0)
+  equal(result.null_arr, null)
+  ok(result.arr instanceof Array)
+  equal(result.arr.length, 1)
+  ok(stringHasISO8601DateSignature(result.arr[0]))
 )
